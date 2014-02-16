@@ -135,9 +135,17 @@ Exercise *exercise;
 
 /* Bar buttons */
 
-- (IBAction)done:(id)sender {
+- (IBAction)cancel:(id)sender
+{
+    NSLog(@"Cancel");
+    [self.delegate workoutConfigViewControllerDidCancel:self];
 }
 
-- (IBAction)cancel:(id)sender {
+- (IBAction)done:(id)sender
+{
+    //workout.workoutName = self.nameTextField.text;
+    NSLog(@"Done");
+    [self.delegate workoutConfigViewController:self didAddExercise:exercise];
 }
+
 @end

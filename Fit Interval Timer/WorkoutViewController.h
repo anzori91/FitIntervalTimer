@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WorkoutConfigViewController.h"
 
-@interface WorkoutViewController : UITableViewController
+@interface WorkoutViewController : UITableViewController <WorkoutConfigViewControllerDelegate>
 
 @end

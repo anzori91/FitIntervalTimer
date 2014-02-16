@@ -7,8 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Exercise.h"
+
+@class WorkoutConfigViewController;
+
+@protocol WorkoutConfigViewControllerDelegate <NSObject>
+- (void)workoutConfigViewControllerDidCancel:(WorkoutConfigViewController *)controller;
+- (void)workoutConfigViewController:(WorkoutConfigViewController *)controller didAddExercise:(Exercise *)exercise;
+@end
 
 @interface WorkoutConfigViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
+
+// Delegate
+@property (nonatomic, weak) id <WorkoutConfigViewControllerDelegate> delegate;
 
 // Selected exercise
 @property (weak, nonatomic) IBOutlet UITableViewCell *selectedExercise;

@@ -139,10 +139,10 @@
             </objects>
             <point key="canvasLocation" x="1164" y="451"/>
         </scene>
-        <!--Table View Controller - workout name-->
+        <!--Workout View Controller - workout name-->
         <scene sceneID="axe-wD-HK1">
             <objects>
-                <tableViewController id="zlx-vP-opm" sceneMemberID="viewController">
+                <tableViewController id="zlx-vP-opm" customClass="WorkoutViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="s0c-qu-gOI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,7 +161,7 @@
                     <navigationItem key="navigationItem" title="workout name" id="LrP-ms-CuK">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TPh-wB-dGJ">
                             <connections>
-                                <segue destination="NDB-V1-FBt" kind="modal" id="8IK-js-bvo"/>
+                                <segue destination="NDB-V1-FBt" kind="modal" identifier="AddExercise" id="8IK-js-bvo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -266,6 +266,9 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="thw-RJ-vhI" kind="push" id="2aE-gj-E9i"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -295,6 +298,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMh-oW-vFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1998" y="1134"/>
+        </scene>
+        <!--Table View Controller - Exercises-->
+        <scene sceneID="998-UP-Ilg">
+            <objects>
+                <tableViewController id="thw-RJ-vhI" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="M2n-wn-3DO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fnI-O7-AXg">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fnI-O7-AXg" id="3LW-rd-X4t">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="thw-RJ-vhI" id="aL7-Zb-tih"/>
+                            <outlet property="delegate" destination="thw-RJ-vhI" id="ZMo-Jt-gAm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Exercises" id="uMc-RS-XUD"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VrB-Ec-PFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2418" y="1133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gf1-jB-VPn">
